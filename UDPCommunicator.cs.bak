@@ -1,0 +1,329 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Net;
+using System.Net.Sockets;
+using System.Text;
+using IDTModule.Messages;
+using Microsoft.Practices.Unity;
+using UtilityLib;
+using UtilityLib.Config;
+using UtilityLib.Thread;
+using log4net;
+
+namespace IDTModule
+{
+    /**
+    /// <summary>   Arguments for idt message received.</summary>
+    ///
+    /// <remarks>   Lishi, 06/11/2013.</remarks>
+    **/
+
+    public class IDTMessageReceivedArgs : EventArgs
+    {
+        /**
+        /// <summary>   the received message</summary>
+        ///
+        /// <value> The message.</value>
+        **/
+        public IDTMessage Message { get; private set; }
+
+        public IDTMessageReceivedArgs(IDTMessage message)
+        {
+            this.Message = message;
+        }
+    }
+
+    /**
+    /// <summary>   class for receving and sending IDT message via UDP</summary>
+    ///
+    /// <remarks>   Lishi, 06/11/2013.</remarks>
+    **/
+
+    public interface IIDTCommunicator
+    {
+        void QueueMessage(IDTMessage msg);
+        T GetMessage<T>() where T : IDTMessage, new();
+        void Start(object param = null);
+        void AskStop();
+        bool WaitStop(int maxWait = -1);
+        T PeekMessage<T>() where T : IDTMessage, new();
+
+        bool IsConnected { get; }
+    }
+
+    public class UDPCommunicator : ThreadEx, IIDTCommunicator
+    {
+
+        private static readonly ILog Log = LogManager.GetLogger(typeof(UDPCommunicator));
+
+        //time after last message that i consider connection disconnected
+        private const int _disconnectionTimeout = 3000;
+        Stopwatch _stDisconnection = new Stopwatch();
+
+        /// <summary>   fire when a message is received.</summary>
+        public event EventHandler<IDTMessageReceivedArgs> MessageReceived;
+
+        protected virtual void OnMessageReceived(IDTMessageReceivedArgs e)
+        {
+            EventHandler<IDTMessageReceivedArgs> handler = MessageReceived;
+            if (handler != null) handler(this, e);
+        }
+
+      
+        private IUnityContainer _container;
+
+        private readonly IPEndPoint _remoteEndPoint;
+        private readonly IPEndPoint _localEndPoint;
+
+
+        private byte _lastReceivedCounter ;
+
+        /// <summary>   toggle counter specified in IDT protocol.</summary>
+        private byte _currentToggle;
+
+        readonly List<IDTMessage> _outgoing;
+
+        readonly List<IDTMessage> _incomming;
+
+        private byte[] _buffer;
+
+        private Socket _socket;
+
+        public UDPCommunicator(IUnityContainer container)
+        {
+            _lastReceivedCounter = 0;
+            _currentToggle = 0;
+            _outgoing = new List<IDTMessage>();
+            _incomming = new List<IDTMessage>();
+            _buffer = new byte[IDTMessage.Lenght];
+            _container = container;
+            var conf = container.Resolve<ApplicationConfiguration>();
+            
+            string remoteIp = conf.GetStringConfig("IDT", "RemoteIP");
+            int remotePort = conf.GetIntConfig("IDT", "RemotePort");
+            _remoteEndPoint = new IPEndPoint(IPAddress.Parse(remoteIp),remotePort);
+            
+            int localPort = conf.GetIntConfig("IDT", "LocalPort");
+            //var ip2 = IPAddress.Parse("192.168.1.200");
+            _localEndPoint = new IPEndPoint(IPAddress.Any, localPort);
+        }
+
+        protected override void Func(object param)
+        {
+            _socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            _socket.Blocking = false;
+            _socket.Bind(_localEndPoint);
+            while (ShouldStop(5) == false)
+            {
+                try
+                {
+                    //(°°) 13-10-2014 Inserito ritorno del servizio che mi invia la DSA
+                   byte ServReq =  ManageReceive();
+                   //(°°) 13-10-2014 Inserito invio forzato del servizio che mi invia la DSA
+                   ManageSend((byte)ServReq);
+                }
+                catch (Exception ex)
+                {
+                    if (ex is SocketException)
+                    {
+                        var e = (SocketException)(ex);
+                        if ((uint)e.ErrorCode != 10035)
+                        {
+                            Log.Error(ex);
+                        }
+                    }
+                    else
+                    {
+                        Log.Error(ex);
+                    }
+                }
+            }            
+        }
+
+        /**
+        /// <summary>   inernal method to send data</summary>
+        ///
+        /// <remarks>   Lishi, 06/11/2013.</remarks>
+        **/
+        private void ManageSend(byte ServReq)
+        {
+            lock (_outgoing)
+            {
+                while (_outgoing.Count > 0)
+                {
+                    var msg = (IDTReply) _outgoing[0];
+                    _outgoing.RemoveAt(0);
+                    msg.Buffer[0] = 1;
+
+                    msg.Buffer[11] = _currentToggle;
+                    msg.ContinuousMFTNumber = _lastReceivedCounter;
+
+                    //Log.Info(String.Format("Sending MSG ToggleByte = {0} ContinuousMFTNumber ={1}", msg.ToggleByte, msg.ContinuousMFTNumber));
+                    
+                   
+                    byte crc = 0;
+                    for (int i = 0; i < 42; i++)
+                    {
+                        crc = (byte) (crc ^ (byte)msg.Buffer[i]);
+                    }
+
+                    msg.CheckSum = crc;
+
+
+                  
+                    //(°°) 13-10-2014 Inserite forzature per cercare di correggere il problema dello sfasamento di risposta.
+                    //     Succede che la prima volta che rispondo al servizio zero o ad un altro servizio, la mia risposta non è coerente
+                    //     e rischio di perdermi la comunicazione. In questo modo controllo cosa ho ricevuto da DSA e sulla base di questo impongo la risposta.
+                    if (ServReq != 0 && msg.Buffer[1] == 0)
+                    {
+                        Log.Info("Service Req = " + ServReq + " Function Result = " + msg.Buffer[1].ToString());
+                        msg.Buffer[1] = 2;
+                    }
+                    if (ServReq == 0 && msg.Buffer[1] != 0)
+                    {
+                        Log.Info("Service Req = " + ServReq + " Function Result = " + msg.Buffer[1].ToString());
+                        msg.Buffer[1] = 0;
+                    }
+
+                    Log.Info(String.Format("TOGGLE {1:X2},MFT:{2:X2}  UDP TX : {0}", msg.ToHexString(), msg.Buffer[11], msg.ContinuousMFTNumber));
+                    Log.Info("------------------------------------------------------------------------------------------------------");
+
+                    _socket.SendTo(msg.Buffer,_remoteEndPoint);
+                }    
+            }
+        }
+
+        /**
+        /// <summary>   internal method to receive data</summary>
+        ///
+        /// <remarks>   Lishi, 06/11/2013.</remarks>
+        ///
+        /// <exception cref="SocketException">  Thrown when a Socket error condition occurs. </exception>
+        **/
+        private byte ManageReceive()
+        {
+           // try
+           // {
+            //(°°) inserita variabile che mi ritorna il valolre del servizio
+                byte ServReq = 0;
+                int read = _socket.Receive(_buffer,_buffer.Length, SocketFlags.None);
+                if (read == 44)
+                {
+                    //secondo le specifiche udp non dovrei poter ricevere mezzi pacchetti
+                    IDTRequest msg = new IDTRequest();
+                    msg.SetBuffer(_buffer);
+
+                    //Gestione del TOGGLE BYTE
+                    // Il PC scrive un numero nell'11 byte, poi appena vediamo quel numero scritto
+                    // nel byte 3 del messaggio che riceviamo dall'MFT, allora incrementiamo di 1
+                    // quel numero e al prossimo messaggio che invieremo, lo andremo a copiare sempre nel
+                    // byte 11.
+
+                    // Caso particolare: all'avvio il valore è zero, quindi noi
+                    // ce ne freghiamo e scriviamo 1.
+                    if (msg.ToggleByte == 0)
+                    {
+                        _currentToggle = 1;
+                    }
+                    else
+                    {
+                        // se vediamo che il valore che riceviamo è diverso da quello corrente, allora incremento di uno.
+                        if (_currentToggle == msg.ToggleByte)
+                        {
+                            _currentToggle++;
+                        }
+                    }
+                  //      byte nextT = (byte) ((msg.ToggleByte+ 1)%Byte.MaxValue);
+                  //  _currentToggle = msg.ToggleByte;
+                   // if (msg.ToggleByte == _currentToggle)
+                    
+                  //     _currentToggle = nextT>  _currentToggle ? nextT : _currentToggle;
+
+                    _lastReceivedCounter = msg.ContinuousMFTNumber;
+                    {
+                       _incomming.Add(msg);
+                    }
+
+
+                    //Console.WriteLine(msg.ContinuousMFTNumber);
+                    //Log.Info(String.Format("Received MSG ToggleByte = {0} ContinuousMFTNumber ={1}", msg.ToggleByte, msg.ContinuousMFTNumber));
+                    Log.Info(String.Format("TOGGLE:{1:X2} MFT:{2:X2}  UDP RX : {0}", msg.ToHexString(),msg.ToggleByte,msg.ContinuousMFTNumber));
+
+                    _stDisconnection.Restart();
+
+                    OnMessageReceived(new IDTMessageReceivedArgs(msg));
+                    ServReq = msg.ServiceRequest;
+
+                   
+                }
+
+                return ServReq;
+        /*    }
+            catch (SocketException ex)
+            {
+                if (ex.ErrorCode != (int) SocketError.WouldBlock)
+                    throw;
+            }*/
+        }
+
+        /**
+        /// <summary>   Add a message to the output queue</summary>
+        ///
+        /// <remarks>   Lishi, 06/11/2013.</remarks>
+        ///
+        /// <param name="msg">  The message. </param>
+        **/
+        public void QueueMessage(IDTMessage msg)
+        {
+            lock (_outgoing)
+            {
+                _outgoing.Add(msg);
+            }
+        }
+
+        public T GetMessage<T>() where T : IDTMessage, new()
+        {
+            T ret = new T();
+            lock (_incomming)
+            {
+                if (_incomming.Count == 0)
+                    return null;
+                var item = _incomming[0];
+                _incomming.RemoveAt(0);
+                if (item == null)
+                    return null;
+                ret.SetBuffer(item.Buffer);
+            }
+            return ret;
+        }
+
+        public T PeekMessage<T>() where T : IDTMessage, new()
+        {
+            T ret = new T();
+            lock (_incomming)
+            {
+                if (_incomming.Count == 0)
+                    return null;
+                var item = _incomming[0];
+                if (item == null)
+                    return null;
+                ret.SetBuffer(item.Buffer);
+            }
+            return ret;
+        }
+
+        /// <summary>
+        /// Check if its connected, since udp is connectionless consider a disconnection if dont receive a message x seconds
+        /// </summary>
+        public bool IsConnected
+        {
+            get
+            {
+                return _stDisconnection.IsRunning == true && _stDisconnection.ElapsedMilliseconds < _disconnectionTimeout;
+            }
+        }
+    }
+}

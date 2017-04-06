@@ -1,0 +1,103 @@
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.Unity.dll
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.Unity.pdb
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.Unity.xml
+D:\Work\Corghi\Nambuco\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+D:\Work\Corghi\Nambuco\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+D:\Work\Corghi\Nambuco\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\log4net.dll
+D:\Work\Corghi\Nambuco\IDT\IDTModule\bin\x86\Debug\log4net.xml
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.Unity.dll
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.Unity.pdb
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\bin\x86\Debug\Microsoft.Practices.Unity.xml
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+D:\Work\Corghi\Nambuco\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Bridge_19-05-2014\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Bridge\Bridge\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Bridge\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Bridge\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Bridge\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Bridge\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\BRIDGE-TO-MERGE\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\Lavori\HPA - FIAT (Brasile)\Software PC Station\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\BRIDGE-TO-MERGE\BACK UP - PC DV1-2-3 modificai x vincenzo 27-02-2015\BACK UP - PC DV1-2-3 modificai x vincenzo 11-02-2015\da pc dv2\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.dll
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\IDTModule.pdb
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\log4net.dll
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.dll
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\bin\x86\Debug\UtilityLib.pdb
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.csprojResolveAssemblyReference.cache
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.dll
+C:\BRIDGE-TO-MERGE\version 1.4\Bridge_1-11-2014_ok\IDT\IDTModule\obj\x86\Debug\IDTModule.pdb
